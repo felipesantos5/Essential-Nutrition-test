@@ -1,12 +1,9 @@
 .benefits {
   padding-inline: 26px;
-  max-width: 1200px;
-  margin: auto;
 
   display: flex;
   gap: 24px;
   flex-direction: column;
-  align-items: center;
 
   margin-top: 40px;
   margin-bottom: 30px;
@@ -56,5 +53,21 @@
 @media (min-width: 500px) {
   .benefits {
     margin-block: 80px;
+  }
+  .wrapper__benefits-difference {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 650) {
+  .benefits {
+    max-width: 1200px;
+    margin: auto;
   }
 }

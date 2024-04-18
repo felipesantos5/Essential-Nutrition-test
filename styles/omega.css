@@ -39,9 +39,15 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 4px;
 
-  padding-inline: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 
+  padding-inline: 10px;
   margin-top: 40px;
+}
+
+.omega__button:hover {
+  background-color: var(--texto-01-light);
 }
 
 .omega__anchor {

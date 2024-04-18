@@ -4,10 +4,15 @@
 
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 24px;
 
   padding-inline: 24px;
   margin-block: 40px;
+}
+
+.price__image {
+  width: 138px;
 }
 
 .price__container {
@@ -29,6 +34,15 @@
   gap: 8px;
 }
 
+.price__firstPrice {
+  font: normal normal normal 15px/19px Helvetica;
+  letter-spacing: 0px;
+}
+
+.price__firstPrice-strong {
+  font-weight: 700;
+}
+
 .price__firstPrice-risk {
   text-decoration: line-through;
 }
@@ -36,6 +50,8 @@
 .price__secundPrice {
   background: #847f7a 0% 0% no-repeat padding-box;
   border-radius: 3px;
+
+  width: 136px;
 
   padding-block: 4px;
 
@@ -49,6 +65,41 @@
   text-decoration: underline;
   font: normal normal normal 15px/24px Helvetica;
   letter-spacing: 0px;
+}
+
+@media (max-width: 374px) {
+  .price {
+    flex-direction: column-reverse;
+  }
+  .price__image {
+    width: 200px;
+  }
+}
+
+@media (min-width: 650px) {
+  .price {
+    padding-block: 80px;
+  }
+  .price__image {
+    width: 300px;
+  }
+  .price__container-prices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .price__container {
+    max-width: 100%;
+  }
+
+  .price__tittle {
+    font-size: 32px;
+  }
+
+  .price__firstPrice {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 374px) {

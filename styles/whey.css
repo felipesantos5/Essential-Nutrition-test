@@ -1,10 +1,25 @@
 .whey {
+  max-width: 1200px;
+  margin: auto;
+
   margin-block: 40px;
+  padding-inline: 36px;
 }
 
 .whey__container {
   display: flex;
   justify-content: center;
+  gap: 40px;
+}
+
+.whey__image {
+  width: 110px;
+}
+
+.whey__wrapper-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .whey__tittle {
@@ -13,8 +28,48 @@
   font: normal normal bold 17px/15px Helvetica;
 }
 
-@media (min-width: 600px) {
+.whey__subTittle {
+  font: normal normal normal 12px/15px Helvetica;
+  letter-spacing: 0px;
+}
+
+.whey__flavors-tittle {
+  font: normal normal bold 16px/19px Helvetica;
+  letter-spacing: 0px;
+}
+
+.whey__flavors-paragraph {
+  font: normal normal normal 16px/19px Helvetica;
+  letter-spacing: 0px;
+  color: #333333;
+}
+
+.whey__composition-wrapper {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.whey__composition-tittle {
+  font: normal normal bold 16px/22px Helvetica;
+  letter-spacing: 0px;
+  color: #333333;
+}
+
+.whey__composition-list {
+  font: normal normal normal 16px/19px Helvetica;
+  letter-spacing: 0px;
+  color: #333333;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@media (min-width: 650px) {
   .whey {
     margin-block: 80px;
+  }
+  .whey__image {
+    width: 300px;
   }
 }

@@ -1,41 +1,35 @@
 .difference {
   background: transparent url("/assets/grupodemascarabg2x.png") 0% 0% no-repeat;
   background-size: contain;
-  height: 500px;
+  height: 308px;
   width: 100%;
 
-  position: relative;
-
   display: flex;
-  flex-direction: column;
-  gap: 14px;
   justify-content: center;
+  align-items: center;
+
+  position: relative;
 }
 
 .difference__wrapper {
   padding-inline: 20px;
+  text-align: center;
 }
 
 .difference__subtittle {
   color: var(--bg-o1-light);
-  text-align: center;
-  font: normal normal 600 16px/17px ProximaNovaSemibold;
+  font: normal 600 16px/17px ProximaNovaSemibold;
   letter-spacing: -0.32px;
-
-  position: absolute;
-  top: 30%; /* Alinha o topo do elemento ao meio do contêiner */
-  left: 50%; /* Alinha a esquerda do elemento ao meio do contêiner */
-  transform: translate(-50%, -50%);
 }
 
 .difference__tittle {
   color: var(--texto-01-light);
-  text-align: center;
-  font: normal normal 900 21px/22px ProximaNovaBlack;
+  font: normal 900 21px/22px ProximaNovaBlack;
   letter-spacing: -0.42px;
+}
 
-  position: absolute;
-  top: 50%; /* Alinha o topo do elemento ao meio do contêiner */
-  left: 50%; /* Alinha a esquerda do elemento ao meio do contêiner */
-  transform: translate(-50%, -50%);
+@media (min-width: 500px) {
+  .difference {
+    width: 100%;
+  }
 }

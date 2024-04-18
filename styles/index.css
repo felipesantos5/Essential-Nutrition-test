@@ -21,6 +21,16 @@
   --bg-o1-light: #ffffff;
 }
 
+[data-theme="dark"] {
+  --white: #000;
+  --black: #fff;
+  --gray: #666666;
+}
+
+body {
+  transition: background-color 0.3s ease;
+}
+
 /* @font-face {
   font-family: HelveticaNeueNormal;
   src: url("fonts/HelveticaNeueRoman.otf");
