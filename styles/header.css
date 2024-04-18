@@ -1,0 +1,20 @@
+.header {
+  background: var(--bg-o2-dark) 0% 0% no-repeat padding-box;
+  padding-block: 10px 12px;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 47px;
+
+  color: var(--bg-o1-light);
+  font: normal normal 600 14px/22px "Proxima Nova";
+  letter-spacing: 0.56px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Helvetica;
+}

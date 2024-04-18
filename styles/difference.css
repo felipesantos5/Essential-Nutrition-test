@@ -1,0 +1,26 @@
+.difference {
+  background: transparent url("/assets/grupodemascarabg.png") 0% 0% no-repeat padding-box;
+  height: 300px;
+
+  margin-top: 30px;
+  padding-inline: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+}
+
+.difference__subtittle {
+  color: var(--bg-o1-light);
+  text-align: center;
+  font: normal normal 600 16px/17px ProximaNovaSemibold;
+  letter-spacing: -0.32px;
+}
+
+.difference__tittle {
+  color: var(--texto-01-light);
+  text-align: center;
+  font: normal normal 900 21px/22px ProximaNovaBlack;
+  letter-spacing: -0.42px;
+}
