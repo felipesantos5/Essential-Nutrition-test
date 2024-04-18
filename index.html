@@ -12,24 +12,38 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+  <script src="js/header.js" defer></script>
 </head>
 
 <body>
   <header class="header">
     <div class="header__wrapper">
-      <a class="header__link" href="https://www.essentialnutrition.com.br/">HOME</a>
-      <a class="header__link" href="https://www.essentialnutrition.com.br/produtos/lancamentos">LANÇAMENTOS</a>
-      <a class="header__link" href="https://www.essentialnutrition.com.br/customer/account/login/">LOGIN</a>
+      <img src="/public/logo.png" alt="" class="header__logo">
+      <button class="header__hamburguer" aria-label="Menu"></button>
+      <nav class="header__menu">
+        <a class="header__link header__line" href="https://www.essentialnutrition.com.br/">HOME</a>
+        <a class="header__link header__line"
+          href="https://www.essentialnutrition.com.br/produtos/lancamentos">LANÇAMENTOS</a>
+        <a class="header__link" href="https://www.essentialnutrition.com.br/customer/account/login/">LOGIN</a>
+      </nav>
+      <div class="header__dropdown">
+        <a class="header__link" href="https://www.essentialnutrition.com.br/">HOME</a>
+        <a class="header__link" href="https://www.essentialnutrition.com.br/produtos/lancamentos">LANÇAMENTOS</a>
+        <a class="header__link" href="https://www.essentialnutrition.com.br/customer/account/login/">LOGIN</a>
+      </div>
     </div>
+
   </header>
+
+
 
   <main>
 
     <section class="cta">
-      <img src="assets/CENA - Omega Brain - ALTA-002.png" alt="" class="cta__img">
+      <img src="assets/ctaOmega2.png" alt="" class="cta__img">
       <div class="cta__container">
         <h2 class="cta__title">Olá, tudo bem?</h2>
-        <p class="cta__paragraph">Olá, Tudo bem? Uma ótima alternativa para essa situação é abordar a <span
+        <p class="cta__paragraph">Uma ótima alternativa para essa situação é abordar a <span
             class="cta__paragraph-span"> relação do
             ômega-3 com o
             bomfuncionamento do nosso cérebro. </span></p>
@@ -43,10 +57,10 @@
       </div>
     </section>
 
-    <img src="assets/Cópia de _65A6579-Editar-2.png" alt="">
-
     <section class="omega">
       <div class="omega__wrapper">
+        <!-- <img src="assets/Cópia de _65A6579-Editar-2.png" alt=""> -->
+
         <div class="omega__container">
           <h2 class="omega__title">ÔMEGA-3 E OUTROS NUTRIENTES PARA O CÉREBRO</h2>
           <p class="omega__paragraph">Entre os ácidos graxos que compõem o ômega-3, o <span
@@ -59,8 +73,10 @@
             blog!</p>
         </div>
         <button class="omega__button"><a href="https://www.essentialnutrition.com.br/conteudos/" class="omega__anchor"">ACESSAR CONTEÚDO</a></button>
-    </div>
+      </div>
     </section>
+
+    
 
     <section class=" composition">
             <div class="composition__wrapper">
@@ -71,17 +87,80 @@
               </p>
 
               <div class="composition__container">
-                <div class="conposition__container-item">
-                  <p>Cafeína Natural</p>
+                <div class="composition__container-item">
+                  <div class="composition__container-circle">
+                    <p>150mg</p>
+                  </div>
+                  <p class="composition__container-label">Cafeína Natural</p>
                 </div>
-                <div class="conposition__container-item">
-                  <p>Fosfatidilserina</p>
+                <div class="composition__container-item">
+                  <div class="composition__container-circle">
+                    <p>150mg</p>
+                  </div>
+                  <p class="composition__container-label">Fosfatidilserina</p>
                 </div>
-                <div class="conposition__container-item">
-                  <p>Extrato de Gengibre Tailandês</p>
+                <div class="composition__container-item">
+                  <div class="composition__container-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="39.195"
+                      height="50" viewBox="0 0 39.195 50">
+                      <defs>
+                        <clipPath id="clip-path">
+                          <path id="Caminho_790" data-name="Caminho 790" d="M0,30.815H39.195v-50H0Z"
+                            transform="translate(0 19.185)" fill="none" />
+                        </clipPath>
+                      </defs>
+                      <g id="Grupo_870" data-name="Grupo 870" transform="translate(0 19.185)">
+                        <g id="Grupo_866" data-name="Grupo 866" transform="translate(0 -19.185)"
+                          clip-path="url(#clip-path)">
+                          <g id="Grupo_865" data-name="Grupo 865" transform="translate(0.522 0.522)">
+                            <path id="Caminho_789" data-name="Caminho 789"
+                              d="M.61,18.123l3.229-1.092M1.355,20.49l6.521-2.108m9.455,9.166.537,4.566m-2.351-5.569.662,5.489M12.489,7.787l3.122,1.827m-2.116-4.8,6.354,4.173M19.533-4.66l2.69,1.446M20.8-6.646l3.586,2.262M30.232.531C30.789,3.5,31.5,7.31,32.059,10.279M8.053,18.829,9.439,23.69M31.253-.055,23.534.959M9.184,11.339c-.821-1.183-2.757-.526-3.63.625a3.264,3.264,0,0,0-3.6-.97A3.675,3.675,0,0,0-.209,15.538L3.635,27.7a4.158,4.158,0,0,0,.149.391L2.8,29.643A5.339,5.339,0,0,0,4.12,36.825a4.818,4.818,0,0,0,6.841-1.486l1.462-2.291,2.236-.469,6.013-.873a4.58,4.58,0,0,0,3.537-5.238,4.3,4.3,0,0,0-4.644-4.045l-.4.057,1.944-3.054L22.3,17.558a4.979,4.979,0,0,0,.407-.784L26.1,11.152l.164-.034,7.193-1.045a5.228,5.228,0,0,0,4.279-5.846A4.927,4.927,0,0,0,32.231-.2L28.108.4l2.327-3.654a5.333,5.333,0,0,0-1.321-7.177,4.817,4.817,0,0,0-6.841,1.48L13.495,4.813c-1.277,2.007-1.637,6.377-.381,8.645l-4.54,7.123-.7-2.2L7.12,15.853S10.5,13.231,9.184,11.339Z"
+                              transform="translate(0.379 11.283)" fill="none" stroke="#141414" stroke-linejoin="round"
+                              stroke-width="1" />
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+
+                  </div>
+                  <p class="composition__container-label">Extrato de Gengibre Tailandês</p>
                 </div>
-                <div class="conposition__container-item">
-                  <p>Óleos de Peixe e de Krill</p>
+                <div class="composition__container-item">
+                  <div class="composition__container-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55"
+                      height="29.303" viewBox="0 0 55 29.303">
+                      <defs>
+                        <clipPath id="clip-path">
+                          <rect id="Retângulo_512" data-name="Retângulo 512" width="55" height="29.303"
+                            fill="#141414" />
+                        </clipPath>
+                      </defs>
+                      <g id="Grupo_869" data-name="Grupo 869" transform="translate(0 0)">
+                        <g id="Grupo_861" data-name="Grupo 861" transform="translate(0 0)" clip-path="url(#clip-path)">
+                          <path id="Caminho_777" data-name="Caminho 777"
+                            d="M26.252,29.207A9.26,9.26,0,0,1,17,19.956a9.136,9.136,0,0,1,.967-4.1.5.5,0,0,1,.04-.093L25.78,1.742a.561.561,0,0,1,.944,0L34.5,15.761a.521.521,0,0,1,.041.094,9.142,9.142,0,0,1,.966,4.1,9.261,9.261,0,0,1-9.25,9.25m-7.259-13a.5.5,0,0,1-.024.055,8.078,8.078,0,0,0-.888,3.69,8.172,8.172,0,1,0,16.343,0,8.084,8.084,0,0,0-.888-3.69.386.386,0,0,1-.024-.056l-7.26-13.1Z"
+                            transform="translate(-7.834 -0.684)" fill="#141414" />
+                          <path id="Caminho_778" data-name="Caminho 778"
+                            d="M76.1,28.032a.539.539,0,0,1-.473-.28,6,6,0,0,1,.92-7.212.539.539,0,0,1,.72.8,4.9,4.9,0,0,0-.695,5.892.54.54,0,0,1-.472.8"
+                            transform="translate(-34.486 -9.401)" fill="#141414" />
+                          <path id="Caminho_779" data-name="Caminho 779"
+                            d="M88.447,25.67a1.033,1.033,0,1,1,1.034-1.034,1.035,1.035,0,0,1-1.034,1.034m0-1.078a.045.045,0,0,0-.045.045c0,.05.09.05.09,0a.044.044,0,0,0-.045-.045"
+                            transform="translate(-40.279 -10.876)" fill="#141414" />
+                          <path id="Caminho_780" data-name="Caminho 780"
+                            d="M75.176,13.922c-1.845-3.254-6.742-5.913-12.6-7.378-.481-.948-2.7-4.964-6.446-6.5a.541.541,0,0,0-.693.271,11.7,11.7,0,0,1-6.451,5.175c-.642.064-1.279.142-1.907.242-1.145.182-2.182.407-3.136.658l.538.97c.845-.212,1.763-.4,2.768-.562a39.1,39.1,0,0,1,14.731.675.538.538,0,0,0,.191.046c5.56,1.348,10.2,3.8,12,6.816a4.754,4.754,0,0,1-1.59,2.951c-4.2,4.275-13.294,6.512-20.1,6.512a15.786,15.786,0,0,1-3.715-.52,10.731,10.731,0,0,1-.456,1,17.146,17.146,0,0,0,4.171.6c.8,0,1.577-.032,2.349-.078a8.964,8.964,0,0,1-1.86,3.631.539.539,0,0,0,.42.878l.054,0c.274-.028,6.625-.731,8.808-5.662,5.1-1.321,9.044-3.51,11.1-5.6a5.6,5.6,0,0,0,1.9-3.86.544.544,0,0,0-.07-.257m-23.331-8.6a12.305,12.305,0,0,0,4.309-4.087,13.1,13.1,0,0,1,5,4.98,41.558,41.558,0,0,0-9.305-.893M54.6,27.987a9.035,9.035,0,0,0,1.332-3.268,38.824,38.824,0,0,0,4.915-.746c-1.557,2.538-4.541,3.6-6.247,4.013"
+                            transform="translate(-20.247 0)" fill="#141414" />
+                          <path id="Caminho_781" data-name="Caminho 781"
+                            d="M7.55,23.237c0-.015,0-.03,0-.045a35.013,35.013,0,0,0-5.48,2.95,31.355,31.355,0,0,0,2.647-7.115c.592-2.808-.487-6.344-1.282-8.409a22.554,22.554,0,0,1,2.917,2.8,9.3,9.3,0,0,0,3.525,2.818l.537-.968a7.867,7.867,0,0,1-3.266-2.579A19.512,19.512,0,0,0,2.5,8.679a.539.539,0,0,0-.759.7c.027.056,2.722,5.642,1.926,9.424A34.919,34.919,0,0,1,.076,27.579a.539.539,0,0,0,.787.706A39.058,39.058,0,0,1,7.606,24.34a10.975,10.975,0,0,1-.056-1.1"
+                            transform="translate(0 -3.965)" fill="#141414" />
+                          <path id="Caminho_782" data-name="Caminho 782"
+                            d="M28.786,41.448a5.485,5.485,0,0,1-5.478-5.479.539.539,0,1,1,1.078,0,4.405,4.405,0,0,0,4.4,4.4.539.539,0,0,1,0,1.078"
+                            transform="translate(-10.74 -16.325)" fill="#141414" />
+                        </g>
+                      </g>
+                    </svg>
+
+                  </div>
+                  <p class="composition__container-label">Óleos de Peixe e de Krill</p>
                 </div>
 
               </div>
@@ -95,46 +174,70 @@
         <li class="benefits__item">Melhora na composição corporal</li>
         <li class="benefits__item">Saciedade</li>
       </ul>
-
     </section>
 
     <section class="difference">
-      <h3 class="difference__subtittle">VOCÊ CONHECE AS DIFERENÇAS ENTRE AS PROTEÍNAS?</h3>
-      <h2 class="difference__tittle">VEM DESCOBRIR AS OPÇÕES DA NOSSA LINHA.</h2>
+      <div class="difference__wrapper">
+        <h3 class="difference__subtittle">VOCÊ CONHECE AS DIFERENÇAS ENTRE AS PROTEÍNAS?</h3>
+        <h2 class="difference__tittle">VEM DESCOBRIR AS OPÇÕES DA NOSSA LINHA.</h2>
+      </div>
     </section>
 
-    <section>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius hic voluptatibus, sapiente architecto quia,
-        blanditiis quis excepturi quo explicabo mollitia reprehenderit expedita porro dolores velit ipsa ducimus?
-        Voluptates, blanditiis voluptatibus?</p>
-    </section>
-
-
-    <section class="flavors">
-      <img src="assets/OmegaBrain.png" alt="">
-
-      <h2 class="flavors__tittle">VEM DESCOBRIR AS OPÇÕES DA NOSSA LINHA.</h2>
-
-      <div class="flavors__container">
-        <p class="flavors__paragraph">Disponível em dois sabores:</p>
-
-        <hr class="flavors__line">
-
-        <div class="flavors__button-container">
-          <button class="flavors__button"><a
-              href=" https://www.essentialnutrition.com.br/collagen-2-joint-neutro-lata">NEUTRO</a></button>
-          <button class="flavors__button"><a
-              href="https://www.essentialnutrition.com.br/collagen-2-joint-limao-siciliano-lata">LIMÃO</a></button>
+    <section class="whey">
+      <div class="whey__container">
+        <img src="assets/latawhey2x.png" alt="">
+        <div class="whey__wrapper-text">
+          <h3 class="whey__tittle">WHEY PROTEIN</h3>
+          <p class="whey__subTittle">22g PROTEÍNA</p>
+          <div class="whey__flavors-wrapper">
+            <h4 class="whey__flavors-tittle">Sabores</h4>
+            <p class="whey__flavors-paragraph">Cacau, Açaí com Banana, Cappuccino, Frutas Vermelhas, Café Espresso,
+              Baunilha, Abacaxi com Água de Coco e
+              Neutro</p>
+          </div>
+          <div class="whey__composition-wrapper">
+            <h4 class="whey__composition-tittle">Composição</h4>
+            <ul class="whey__composition-list">
+              <li class="whey__composition-item">• Proteínas hidrolisada e isolada do soro de leite (WPH e WPI)</li>
+              <li class="whey__composition-item">• Peptídeos de colágeno Peptan®</li>
+              <li class="whey__composition-item">• BCAA naturalmente em sua composição</li>
+              <li class="whey__composition-item">• Adoçantes naturais</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
+
+    <section class="flavors">
+      <div class="flavors_wrapper">
+        <img src="assets/OmegaBrain@2x.png" alt="" class="flavors__img">
+
+        <div class="flavors__container">
+          <h2 class="flavors__tittle">VEM DESCOBRIR AS OPÇÕES DA NOSSA LINHA.</h2>
+
+
+          <p class="flavors__paragraph">Disponível em dois sabores:</p>
+
+          <hr class="flavors__line">
+
+          <div class="flavors__button-container">
+            <button class="flavors__button"><a
+                href=" https://www.essentialnutrition.com.br/collagen-2-joint-neutro-lata">NEUTRO</a></button>
+            <button class="flavors__button"><a
+                href="https://www.essentialnutrition.com.br/collagen-2-joint-limao-siciliano-lata">LIMÃO</a></button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
     <section class="price">
-      <img src="assets/finais-47.png" alt="">
+      <img src="assets/price2x.png" alt="">
       <div class="price__container">
         <h3 class="price__tittle">ENDURANCE AND RECOVERY</h3>
         <div class="price__container-prices">
-          <p class="price__firstPrice">De: R$ <span class="price__firstPrice-risk"></span>195,00</p>
+          <p class="price__firstPrice">De: R$ <span class="price__firstPrice-risk">195,00</span></p>
           <p class="price__secundPrice">Por: R$ 165,75</p>
           <a href="https://www.essentialnutrition.com.br/carbpro-4-1-citrus" class="price__anchor">Comprar</a>
         </div>
@@ -143,9 +246,9 @@
     </section>
   </main>
 
-  <footer class="">
-    <p>ÚLTIMAS HORAS PARA APROVEITAR!</p>
-    <button><a href="https://www.essentialnutrition.com.br/produtos">VER TODOS</a></button>
+  <footer class="footer">
+    <h2 class="footer__tittle">ÚLTIMAS HORAS PARA APROVEITAR!</h2>
+    <button class="footer__button"><a href="https://www.essentialnutrition.com.br/produtos">VER TODOS</a></button>
   </footer>
 </body>
 

@@ -1,14 +1,13 @@
 .omega {
   background: var(--bg-o2-light) 0% 0% no-repeat padding-box;
-  padding-inline: 24px;
-  padding-block: 40px;
 }
 
 .omega__wrapper {
   max-width: 1200px;
   margin: auto;
 
-  margin-bottom: 40px;
+  padding-inline: 24px;
+  padding-block: 40px;
 }
 
 .omega__container {
@@ -40,7 +39,6 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 4px;
 
-  padding-block: 12px;
   padding-inline: 10px;
 
   margin-top: 40px;
@@ -51,4 +49,10 @@
   text-align: center;
   font: normal normal normal 17px/45px Helvetica Neue;
   letter-spacing: 0px;
+}
+
+@media (min-width: 720px) {
+  .omega__wrapper {
+    padding-block: 80px;
+  }
 }

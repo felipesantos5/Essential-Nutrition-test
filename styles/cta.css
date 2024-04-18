@@ -3,9 +3,13 @@
   margin: auto;
 }
 
+.cta__img {
+  width: 100%;
+}
+
 .cta__container {
   font-weight: normal;
-  padding: 32px 20px;
+  margin: 40px 24px;
 
   display: flex;
   flex-direction: column;
@@ -29,4 +33,19 @@
   color: var(--texto-01-light);
 
   letter-spacing: 0px;
+}
+
+@media (min-width: 550px) {
+  .cta {
+    margin-block: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .cta__img {
+    width: 50%;
+  }
+  .cta__title {
+    font-size: 32px;
+  }
 }

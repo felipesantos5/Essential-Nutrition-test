@@ -8,6 +8,7 @@
 @import "difference.css";
 @import "flavors.css";
 @import "price.css";
+@import "whey.css";
 
 :root {
   --texto-01-dark: #4a3683;

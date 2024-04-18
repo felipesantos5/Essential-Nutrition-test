@@ -3,11 +3,21 @@
   padding-block: 10px 12px;
 }
 
+.header__logo {
+  width: 50px;
+}
+
 .header__wrapper {
   display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+  position: relative;
+}
+
+.header__menu {
+  display: none;
   justify-content: center;
   gap: 47px;
-
   color: var(--bg-o1-light);
   font: normal normal 600 14px/22px "Proxima Nova";
   letter-spacing: 0.56px;
@@ -17,4 +27,66 @@
   text-decoration: none;
   color: #ffffff;
   font-family: Helvetica;
+  transition: color 0.3s ease;
+
+  position: relative;
+}
+
+.header__line::after {
+  content: "";
+  position: absolute;
+
+  height: 100%;
+  border: 1px solid var(--bg-o1-light);
+  border: 1px solid #ffffff;
+}
+
+.header__link:hover {
+  color: var(--texto-01-light);
+}
+
+.header__hamburguer {
+  background: #2c2c2c;
+}
+
+.header__hamburguer::before,
+.header__hamburguer::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+.header__dropdown {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  padding: 14px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  text-align: right;
+  color: white;
+}
+
+.header__dropdown.active {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (min-width: 375px) {
+  .header__hamburguer {
+    display: none;
+  }
+  .header__logo {
+    display: none;
+  }
+  .header__menu {
+    display: flex;
+  }
+  .header__wrapper {
+    justify-content: center;
+  }
 }

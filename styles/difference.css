@@ -1,9 +1,10 @@
 .difference {
-  background: transparent url("/assets/grupodemascarabg.png") 0% 0% no-repeat padding-box;
-  height: 300px;
+  background: transparent url("/assets/grupodemascarabg2x.png") 0% 0% no-repeat;
+  background-size: contain;
+  height: 500px;
+  width: 100%;
 
-  margin-top: 30px;
-  padding-inline: 20px;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -11,11 +12,20 @@
   justify-content: center;
 }
 
+.difference__wrapper {
+  padding-inline: 20px;
+}
+
 .difference__subtittle {
   color: var(--bg-o1-light);
   text-align: center;
   font: normal normal 600 16px/17px ProximaNovaSemibold;
   letter-spacing: -0.32px;
+
+  position: absolute;
+  top: 30%; /* Alinha o topo do elemento ao meio do contêiner */
+  left: 50%; /* Alinha a esquerda do elemento ao meio do contêiner */
+  transform: translate(-50%, -50%);
 }
 
 .difference__tittle {
@@ -23,4 +33,9 @@
   text-align: center;
   font: normal normal 900 21px/22px ProximaNovaBlack;
   letter-spacing: -0.42px;
+
+  position: absolute;
+  top: 50%; /* Alinha o topo do elemento ao meio do contêiner */
+  left: 50%; /* Alinha a esquerda do elemento ao meio do contêiner */
+  transform: translate(-50%, -50%);
 }
