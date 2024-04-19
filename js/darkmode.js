@@ -1,22 +1,7 @@
 const btnDarkModeToggle = document.getElementById("btn-dark-mode-toggle");
-const themeSystem = localStorage.getItem("themeSystem") || "light";
+const html = document.querySelector("html");
 
-btnDarkModeToggle.addEventListener("click", () => {
-  let oldTheme = localStorage.getItem("themeSystem") || "light";
-  let newTheme = oldTheme == "light" ? "dark" : "light";
-  localStorage.setItem("themeSystem", newTheme);
-  defineCurrentTheme(newTheme);
-});
-
-function defineCurrentTheme(theme) {
-  const darkSvg = "tema claro";
-  const lightSvg = "tema escuro";
-  document.documentElement.setAttribute("data-theme", theme);
-  if (theme == "light") {
-    btnDarkModeToggle.innerHTML = darkSvg;
-    return;
-  }
-  btnDarkModeToggle.innerHTML = lightSvg;
-}
-
-defineCurrentTheme(themeSystem);
+btnDarkModeToggle.onclick = function () {
+  html.classList.toggle("dark-mode");
+  console.log("test");
+};
