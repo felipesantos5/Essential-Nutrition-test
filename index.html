@@ -1,38 +1,1195 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark-mode">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Essential Nutrition</title>
   <link rel="icon" href="public/logo.png" type="image/png" />
-  <link rel="stylesheet" href="styles/index.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+
   <script src="js/header.js" defer></script>
   <script src="js/darkmode.js" defer></script>
+
+  <style type="text/css">
+    :root {
+      --texto-01-dark: #4a3683;
+      --texto-01-light: #7c68b5;
+      --bg-03-dark: #bbbbbb;
+      --bg-03-light: #ededed;
+      --bg-o2-dark: #000000;
+      --bg-o2-light: #141414;
+      --bg-o1-dark: #cdcdcd;
+      --bg-o1-light: #ffffff;
+      --gray-cta: #666666;
+      --gray-benefits: #333333;
+    }
+
+    .dark-mode:root {
+      --bg-o1-light: #1d1c1c;
+      --bg-03-light: #131212;
+      --bg-o2-dark: #fff;
+      --gray-cta: #fff;
+      --bg-o2-light: #fff;
+      --gray-benefits: #fff;
+    }
+
+    @font-face {
+      font-family: ProximaNovaSemibold;
+      src: url("/fonts/ProximaNovaSemibold.otf") format("opentype");
+    }
+
+    @font-face {
+      font-family: ProximaNovaBlack;
+      src: url("/fonts/ProximaNovaBlack.otf") format("opentype");
+    }
+
+    /* HEADER */
+
+    .header {
+      background: black 0% 0% no-repeat padding-box;
+      padding-block: 10px 12px;
+    }
+
+    .header__logo {
+      width: 50px;
+    }
+
+    .header__wrapper {
+      display: flex;
+      justify-content: center;
+      margin-inline: 20px;
+      position: relative;
+    }
+
+    .header__menu {
+      display: flex;
+      justify-content: center;
+      gap: 47px;
+      color: #fff;
+      font: normal normal 600 14px/22px "Proxima Nova";
+      letter-spacing: 0.56px;
+    }
+
+    .header__link {
+      font-size: 14px;
+      text-decoration: none;
+      color: #ffffff;
+      font-family: Helvetica;
+      transition: color 0.3s ease;
+
+      position: relative;
+    }
+
+    .header__line::after {
+      content: "";
+      position: absolute;
+
+      height: 100%;
+      border: 1px solid #fff;
+      margin-left: 20px;
+
+      cursor: auto;
+    }
+
+    .header__link:hover {
+      color: var(--texto-01-light);
+    }
+
+    .header__hamburguer {
+      background: #2c2c2c;
+    }
+
+    .header__hamburguer::before,
+    .header__hamburguer::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+    }
+
+    @media (max-width:320px) {
+      .header__link {
+        font-size: 10px;
+      }
+    }
+
+    /* CTA */
+
+    .cta {
+      background: var(--bg-o1-light);
+    }
+
+    .cta__wrapper {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cta__img {
+      width: 100%;
+    }
+
+    .cta__container {
+      font-weight: normal;
+      padding: 40px 24px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: var(--bg-o2-light);
+      background-color: var(--white);
+    }
+
+    .cta__title {
+      font: normal normal normal 17px/22px Helvetica Neue;
+      letter-spacing: 0px;
+      color: var(--bg-o2-light);
+    }
+
+    .cta__paragraph {
+      font: normal normal normal 17px/22px Helvetica Neue;
+      letter-spacing: 0px;
+      color: var(--gray-cta);
+    }
+
+    .cta__paragraph-span {
+      color: var(--texto-01-light);
+
+      letter-spacing: 0px;
+    }
+
+    @media (min-width: 550px) {
+      .cta__wrapper {
+        padding-block: 50px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .cta__img {
+        width: 40%;
+      }
+
+      .cta__title {
+        font-size: 32px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .cta {
+        background-color: #141414;
+      }
+
+      .cta__title {
+        color: #fff;
+      }
+
+      .cta__paragraph {
+        color: #fff;
+      }
+
+    }
+
+    /* OMEGA */
+
+    .omega {
+      background: black 0% 0% no-repeat padding-box;
+    }
+
+    .omega__container {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .omega__image {
+      width: 100%;
+    }
+
+    .omega__wrapper {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+
+      padding-inline: 24px;
+      padding-block: 40px;
+    }
+
+    .omega__container-text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      color: #ffffff;
+    }
+
+    .omega__title {
+      color: #ffffff;
+      font: normal normal bold 30px/30px Helvetica;
+      letter-spacing: 0px;
+    }
+
+    .omega__paragraph {
+      color: #ffffff;
+      font: normal normal normal 17px/22px Helvetica Neue;
+      letter-spacing: 0px;
+    }
+
+    .omega__paragraph-span {
+      color: var(--texto-01-light);
+    }
+
+    .omega__button {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border-radius: 4px;
+
+      transition: all 0.3s ease;
+
+      width: 220px;
+
+      padding-inline: 10px;
+      margin-top: 40px;
+    }
+
+    .omega__button:hover {
+      background-color: var(--texto-01-light);
+    }
+
+    .omega__anchor {
+      color: black;
+      text-align: center;
+      font: normal normal normal 17px/45px Helvetica Neue;
+      letter-spacing: 0px;
+    }
+
+    @media (min-width: 720px) {
+      .omega__wrapper {
+        padding-block: 80px;
+      }
+    }
+
+    @media (min-width: 700px) {
+
+      .omega__container {
+        flex-direction: row;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .omega__title {
+        font-size: 24px;
+      }
+    }
+
+    /* COMPOSITION */
+
+    .composition {
+      background: var(--bg-03-light);
+      padding: 40px 24px;
+    }
+
+    .composition__wrapper {
+      max-width: 800px;
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .composition__paragraph {
+      color: var(--bg-o2-light);
+      text-align: left;
+      font: normal normal normal 17px/22px Helvetica Neue;
+      letter-spacing: 0px;
+    }
+
+    .composition__paragraph-span {
+      color: var(--texto-01-light);
+    }
+
+    .composition__container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .composition__container-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .composition__container-circle {
+      width: 90px;
+      height: 90px;
+
+      color: var(--bg-o2-dark);
+
+      border: 1px solid var(--texto-01-light);
+      border-radius: 50%;
+
+      font-family: roboto;
+      font-size: 17px;
+      font-weight: 300;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #Caminho_789,
+    #Grupo_869 {
+      stroke: #000;
+    }
+
+    .composition__container-label {
+      color: var(--bg-o2-light);
+      text-align: center;
+      letter-spacing: 0px;
+
+      font-family: roboto;
+      font-weight: 400;
+      font-size: 17px;
+    }
+
+    @media (min-width: 720px) {
+      .composition__paragraph {
+        text-align: center;
+      }
+
+      .composition__container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .composition {
+        padding-block: 80px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .composition__container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .composition {
+        background-color: #141414;
+      }
+
+      .composition__paragraph {
+        color: #fff;
+      }
+
+      .composition__container-circle {
+        color: #fff;
+      }
+
+      #Caminho_789,
+      #Grupo_869 {
+        stroke: #fff;
+      }
+
+      .composition__container-label {
+        color: #fff;
+      }
+    }
+
+    /* BENEFITS */
+
+    .wrapper__benefits-difference {
+      background-color: var(--bg-o1-light);
+    }
+
+    .wrapper__benefits-difference-wrapper {
+      background-color: var(--bg-o1-light);
+    }
+
+    .benefits {
+      background: var(--bg-o1-light);
+      padding-inline: 26px;
+
+      display: flex;
+      gap: 24px;
+      flex-direction: column;
+
+      padding-block: 40px;
+    }
+
+    .benefits__tittle {
+      font: normal normal bold 17px/22px Helvetica;
+      letter-spacing: 0px;
+      color: var(--gray-benefits);
+    }
+
+    .benefits__list {
+      font: normal normal normal 17px/22px Helvetica;
+      letter-spacing: -0.34px;
+      color: var(--gray-benefits);
+
+      padding-left: 20px;
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      margin-bottom: 30px;
+    }
+
+    .benefits__item {
+      position: relative;
+    }
+
+    .benefits__item::after {
+      content: "";
+      display: block;
+
+      width: 11px;
+      height: 11px;
+
+      border-radius: 50%;
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background: var(--texto-01-light) 0% 0% no-repeat padding-box;
+    }
+
+    @media (min-width: 700px) {
+      .wrapper__benefits-difference-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        gap: 20px;
+
+        padding-block: 80px;
+        max-width: 800px;
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 650) {
+      .benefits {
+        max-width: 1200px;
+        margin: auto;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .wrapper__benefits-difference {
+        background-color: #141414;
+      }
+
+      .wrapper__benefits-difference-wrapper {
+        background-color: #141414;
+      }
+
+      .benefits {
+        background-color: #141414;
+
+      }
+
+      .benefits__tittle {
+        color: #fff;
+      }
+
+      .benefits__list {
+        color: #fff;
+      }
+    }
+
+    /* DIFFERENCE */
+
+    .difference {
+      background: transparent url("/assets/grupodemascarabg2x.png") 0% 0% no-repeat;
+      background-size: cover;
+      height: 308px;
+      width: 100%;
+      position: relative;
+    }
+
+    .difference__wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-inline: 20px;
+      text-align: center;
+    }
+
+    .difference__subtittle {
+      color: #ffffff;
+      font: normal 600 16px/17px ProximaNovaSemibold;
+      letter-spacing: -0.32px;
+      width: 289px;
+      margin-bottom: 10px;
+    }
+
+    .difference__tittle {
+      color: var(--texto-01-light);
+      font: normal 900 21px/22px ProximaNovaBlack;
+      letter-spacing: -0.42px;
+    }
+
+    @media (min-width: 376px) {
+      .difference {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .difference__subtittle {
+        font-size: 14px;
+      }
+
+      .difference__tittle {
+        font-size: 18px;
+      }
+    }
+
+    /* WHEY */
+
+    .whey {
+      background-color: var(--bg-o1-light);
+
+      padding-block: 40px;
+      padding-inline: 36px;
+    }
+
+    .whey__container {
+      max-width: 1000px;
+      margin: auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .whey__image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .whey__wrapper-text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .whey__tittle {
+      color: var(--texto-01-light);
+      text-align: left;
+      font: normal normal bold 17px Helvetica;
+    }
+
+    .whey__subTittle {
+      color: var(--bg-o2-dark);
+      font: normal normal normal 12px/15px Helvetica;
+      letter-spacing: 0px;
+    }
+
+    .whey__flavors-tittle {
+      font: normal normal bold 16px/19px Helvetica;
+      color: var(--bg-o2-dark);
+      letter-spacing: 0px;
+    }
+
+    .whey__flavors-paragraph {
+      font: normal normal normal 16px/19px Helvetica;
+      color: var(--bg-o2-dark);
+      letter-spacing: 0px;
+      color: var(--gray-benefits);
+    }
+
+    .whey__composition-wrapper {
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .whey__composition-tittle {
+      font: normal normal bold 16px/22px Helvetica;
+      letter-spacing: 0px;
+      color: var(--gray-benefits);
+    }
+
+    .whey__composition-list {
+      font: normal normal normal 16px/19px Helvetica;
+      letter-spacing: 0px;
+      color: var(--gray-benefits);
+
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .whey__composition-wrapper-desktop {
+      display: none;
+    }
+
+    @media (min-width: 650px) {
+      .whey {
+        padding-block: 80px;
+      }
+
+      .whey__image {
+        width: 300px;
+        height: 300px;
+      }
+
+      .whey__composition-wrapper-desktop {
+        display: block;
+      }
+
+      .whey__composition-wrapper-mobile {
+        display: none;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .whey {
+        padding-block: 80px;
+      }
+
+      .whey__tittle {
+        font-size: 36px;
+      }
+
+      .whey__subTittle {
+        font-size: 20px;
+      }
+
+      .whey__tittle {
+        font-size: 34px;
+      }
+
+      .whey__tittle {
+        font-size: 36px;
+        margin-bottom: 4px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .whey__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .whey {
+        background-color: #141414;
+      }
+
+      .whey__subTittle {
+        color: #fff;
+      }
+
+      .whey__flavors-tittle {
+        color: #fff;
+      }
+
+      .whey__flavors-paragraph {
+        color: #fff;
+      }
+
+      .whey__composition-tittle {
+        color: #fff;
+      }
+
+      .whey__composition-list {
+        color: #fff;
+      }
+
+    }
+
+    /* FLAVORS */
+
+    .flavors {
+      background: black;
+    }
+
+    .flavors_wrapper {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flavors__img {
+      width: 100%;
+    }
+
+    .flavors__container {
+      display: flex;
+      flex-direction: column;
+      padding-inline: 36;
+      gap: 10px;
+
+      margin-top: 44px;
+      margin-bottom: 48px;
+
+      margin-inline: 36px;
+    }
+
+    .flavors__tittle {
+      color: var(--texto-01-light);
+      text-align: center;
+      font: normal normal bold 21px/22px Helvetica;
+      letter-spacing: -0.42px;
+    }
+
+    .flavors__paragraph {
+      color: #fff;
+      text-align: center;
+      font: normal normal normal 17px/22px Helvetica Neue;
+      letter-spacing: 0px;
+    }
+
+    .flavors__line {
+      border: 2px solid var(--texto-01-light);
+      border: 2px solid #7c68b5;
+      max-width: 255px;
+      width: 100%;
+    }
+
+    .flavors__button-container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .flavors__button {
+      background: var(--bg-o1-light) 0% 0% no-repeat padding-box;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border-radius: 4px;
+      padding: 5px 25px;
+
+      transition: all 0.3s ease;
+    }
+
+    .flavors__button:hover {
+      background-color: var(--texto-01-light);
+    }
+
+    .flavors__button a {
+      color: black;
+      text-align: center;
+      font: normal normal normal 17px/45px Helvetica Neue;
+      letter-spacing: 0px;
+    }
+
+    @media (min-width: 650px) {
+      .flavors_wrapper {
+        padding-block: 80px;
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      .flavors__container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .flavors__img {
+        width: 50%;
+      }
+
+      .flavors__button {
+        border: 1px solid black;
+      }
+    }
+
+    @media (max-width: 300px) {
+      .flavors__button-container {
+        flex-direction: column;
+      }
+    }
+
+    /* PRICE */
+
+    .price {
+      background-color: var(--bg-o1-light);
+      padding-inline: 24px;
+      padding-block: 40px;
+    }
+
+    .price__wrapper {
+      max-width: 800px;
+      margin: auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .price__image {
+      width: 138px;
+    }
+
+    .price__container {
+      max-width: 180px;
+    }
+
+    .price__tittle {
+      color: var(--texto-01-light);
+      font: normal normal bold 20px Helvetica;
+      letter-spacing: 0px;
+      color: #7c68b5;
+
+      padding-block: 17px;
+    }
+
+    .price__container-prices {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--bg-o2-dark);
+    }
+
+    .price__firstPrice {
+      font: normal normal normal 15px/19px Helvetica;
+      letter-spacing: 0px;
+    }
+
+    .price__firstPrice-strong {
+      font-weight: 700;
+    }
+
+    .price__firstPrice-risk {
+      text-decoration: line-through;
+    }
+
+    .price__secundPrice {
+      background: #847f7a 0% 0% no-repeat padding-box;
+      border-radius: 3px;
+
+      width: 136px;
+
+      padding: 4px;
+      text-align: center;
+
+      color: #fff;
+      font: normal normal normal 18px/19px Helvetica;
+      letter-spacing: 0px;
+    }
+
+    .price__anchor {
+      color: var(--texto-01-light);
+      text-decoration: underline;
+      font: normal normal normal 15px/24px Helvetica;
+      letter-spacing: 0px;
+    }
+
+    @media (min-width: 650px) {
+      .price {
+        padding-block: 80px;
+        gap: 80px;
+      }
+
+      .price__wrapper {
+        gap: 60px;
+      }
+
+      .price__image {
+        width: 300px;
+      }
+
+      .price__container-prices {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .price__container {
+        max-width: 100%;
+      }
+
+      .price__tittle {
+        font-size: 32px;
+      }
+
+      .price__firstPrice {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .price__image {
+        max-width: 450px;
+      }
+    }
+
+    @media (min-width: 500px) {
+      .price__image {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .price__wrapper {
+        flex-direction: column-reverse;
+      }
+
+      .price__image {
+        width: 85%;
+      }
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+      .price {
+        background-color: #141414;
+      }
+
+      .price__firstPrice {
+        color: #fff;
+      }
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: black;
+    }
+
+    .footer__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      padding-top: 32px;
+
+      background: url("/assets/footerbg2.png");
+      background-size: cover;
+      max-width: 2000px;
+      margin: auto;
+
+      width: 100%;
+    }
+
+    .footer__tittle {
+      color: var(--texto-01-light);
+      text-align: center;
+      font: normal normal bold 20px/23px Helvetica;
+      letter-spacing: 0px;
+
+      width: 237px;
+    }
+
+    .footer__button {
+      background: var(--bg-o1-light) 0% 0% no-repeat padding-box;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border-radius: 4px;
+
+      width: 200px;
+      padding: 10px 50px;
+      margin-bottom: 20px;
+    }
+
+    .footer__button a {
+      color: black;
+      text-align: center;
+      font: normal normal normal 14px/24px Helvetica;
+      letter-spacing: 0px;
+    }
+
+    @media (max-width: 376px) {
+      .footer__tittle {
+        font-size: 17px;
+      }
+
+      .footer__button a {
+        font-size: 12px;
+      }
+    }
+
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: "";
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
   <header class="header">
     <div class="header__wrapper">
-      <img src="/public/logo.png" alt="" class="header__logo">
-      <button class="header__hamburguer" aria-label="Menu"></button>
       <nav class="header__menu">
         <a class="header__link header__line" href="https://www.essentialnutrition.com.br/">HOME</a>
         <a class="header__link header__line"
           href="https://www.essentialnutrition.com.br/produtos/lancamentos">LANÇAMENTOS</a>
         <a class="header__link" href="https://www.essentialnutrition.com.br/customer/account/login/">LOGIN</a>
       </nav>
-      <div class="header__dropdown">
-        <a class="header__link" href="https://www.essentialnutrition.com.br/">HOME</a>
-        <a class="header__link" href="https://www.essentialnutrition.com.br/produtos/lancamentos">LANÇAMENTOS</a>
-        <a class="header__link" href="https://www.essentialnutrition.com.br/customer/account/login/">LOGIN</a>
-        <button class="header__link" id="btn-dark-mode-toggle">MODO ESCURO</>
-      </div>
     </div>
 
   </header>
@@ -62,160 +1219,167 @@
     </section>
 
     <section class="omega">
-      <div class="omega__wrapper">
-        <!-- <img src="assets/Cópia de _65A6579-Editar-2.png" alt=""> -->
+      <div class="omega__container">
+        <img src="assets/Cópia de _65A6579-Editar-2.png" alt="mão segurando 2 compromidos de Omega-3"
+          class="omega__image">
+        <div class="omega__wrapper">
 
-        <div class="omega__container">
-          <h2 class="omega__title">ÔMEGA-3 E OUTROS NUTRIENTES PARA O CÉREBRO</h2>
-          <p class="omega__paragraph">Entre os ácidos graxos que compõem o ômega-3, o <span
-              class="omega__paragraph-span">DHA</span> é o que tem <span class="omega__paragraph-span">mais facilidade
-              de
-              ser absorvido</span> pelo nosso
-            cérebro.</p>
-          <p class="omega__paragraph">Para entender um pouco mais sobre essa relação e ainda descobrir outros hábitos
-            que podem ajudar na <span class="omega__paragraph-span"> saúde cerebral,</span> acesse o artigo no nosso
-            blog!</p>
-        </div>
-        <button class="omega__button"><a href="https://www.essentialnutrition.com.br/conteudos/" class="omega__anchor"">ACESSAR CONTEÚDO</a></button>
+
+          <div class="omega__container-text">
+            <h2 class="omega__title">ÔMEGA-3 E OUTROS NUTRIENTES PARA O CÉREBRO</h2>
+            <p class="omega__paragraph">Entre os ácidos graxos que compõem o ômega-3, o <span
+                class="omega__paragraph-span">DHA</span> é o que tem <span class="omega__paragraph-span">mais facilidade
+                de
+                ser absorvido</span> pelo nosso
+              cérebro.</p>
+            <p class="omega__paragraph">Para entender um pouco mais sobre essa relação e ainda descobrir outros hábitos
+              que podem ajudar na <span class="omega__paragraph-span"> saúde cerebral,</span> acesse o artigo no nosso
+              blog!</p>
+          </div>
+          <button class="omega__button"><a href="https://www.essentialnutrition.com.br/conteudos/" class="omega__anchor"">ACESSAR CONTEÚDO</a></button>
       </div>
+    </div>
     </section>
 
     <section class=" composition">
-            <div class="composition__wrapper">
-              <p class="composition__paragraph">Uma composição inteligente com ômega-3 que pode ajudar você a
-                <span class="composition__paragraph-span"> melhorar as
-                  conexões cerebrais, aumentar o foco e
-                  aprimorar a concentração.</span>
-              </p>
+              <div class="composition__wrapper">
+                <p class="composition__paragraph">Uma composição inteligente com ômega-3 que pode ajudar você a
+                  <span class="composition__paragraph-span"> melhorar as
+                    conexões cerebrais, aumentar o foco e
+                    aprimorar a concentração.</span>
+                </p>
 
-              <div class="composition__container">
-                <div class="composition__container-item">
-                  <div class="composition__container-circle">
-                    <p>150mg</p>
+                <div class="composition__container">
+                  <div class="composition__container-item">
+                    <div class="composition__container-circle">
+                      <p>150mg</p>
+                    </div>
+                    <p class="composition__container-label">Cafeína Natural</p>
                   </div>
-                  <p class="composition__container-label">Cafeína Natural</p>
-                </div>
-                <div class="composition__container-item">
-                  <div class="composition__container-circle">
-                    <p>150mg</p>
+                  <div class="composition__container-item">
+                    <div class="composition__container-circle">
+                      <p>150mg</p>
+                    </div>
+                    <p class="composition__container-label">Fosfatidilserina</p>
                   </div>
-                  <p class="composition__container-label">Fosfatidilserina</p>
-                </div>
-                <div class="composition__container-item">
-                  <div class="composition__container-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55"
-                      style="display: none" height="29.303" viewBox="0 0 55 29.303">
-                      <defs>
-                        <clipPath id="clip-path">
-                          <rect id="Retângulo_512" data-name="Retângulo 512" width="55" height="29.303"
-                            fill="#141414" />
-                        </clipPath>
-                      </defs>
-                      <g id="Grupo_869" data-name="Grupo 869" transform="translate(0 0)">
-                        <g id="Grupo_861" data-name="Grupo 861" transform="translate(0 0)" clip-path="url(#clip-path)">
-                          <path id="Caminho_777" data-name="Caminho 777"
-                            d="M26.252,29.207A9.26,9.26,0,0,1,17,19.956a9.136,9.136,0,0,1,.967-4.1.5.5,0,0,1,.04-.093L25.78,1.742a.561.561,0,0,1,.944,0L34.5,15.761a.521.521,0,0,1,.041.094,9.142,9.142,0,0,1,.966,4.1,9.261,9.261,0,0,1-9.25,9.25m-7.259-13a.5.5,0,0,1-.024.055,8.078,8.078,0,0,0-.888,3.69,8.172,8.172,0,1,0,16.343,0,8.084,8.084,0,0,0-.888-3.69.386.386,0,0,1-.024-.056l-7.26-13.1Z"
-                            transform="translate(-7.834 -0.684)" fill="#141414" />
-                          <path id="Caminho_778" data-name="Caminho 778"
-                            d="M76.1,28.032a.539.539,0,0,1-.473-.28,6,6,0,0,1,.92-7.212.539.539,0,0,1,.72.8,4.9,4.9,0,0,0-.695,5.892.54.54,0,0,1-.472.8"
-                            transform="translate(-34.486 -9.401)" fill="#141414" />
-                          <path id="Caminho_779" data-name="Caminho 779"
-                            d="M88.447,25.67a1.033,1.033,0,1,1,1.034-1.034,1.035,1.035,0,0,1-1.034,1.034m0-1.078a.045.045,0,0,0-.045.045c0,.05.09.05.09,0a.044.044,0,0,0-.045-.045"
-                            transform="translate(-40.279 -10.876)" fill="#141414" />
-                          <path id="Caminho_780" data-name="Caminho 780"
-                            d="M75.176,13.922c-1.845-3.254-6.742-5.913-12.6-7.378-.481-.948-2.7-4.964-6.446-6.5a.541.541,0,0,0-.693.271,11.7,11.7,0,0,1-6.451,5.175c-.642.064-1.279.142-1.907.242-1.145.182-2.182.407-3.136.658l.538.97c.845-.212,1.763-.4,2.768-.562a39.1,39.1,0,0,1,14.731.675.538.538,0,0,0,.191.046c5.56,1.348,10.2,3.8,12,6.816a4.754,4.754,0,0,1-1.59,2.951c-4.2,4.275-13.294,6.512-20.1,6.512a15.786,15.786,0,0,1-3.715-.52,10.731,10.731,0,0,1-.456,1,17.146,17.146,0,0,0,4.171.6c.8,0,1.577-.032,2.349-.078a8.964,8.964,0,0,1-1.86,3.631.539.539,0,0,0,.42.878l.054,0c.274-.028,6.625-.731,8.808-5.662,5.1-1.321,9.044-3.51,11.1-5.6a5.6,5.6,0,0,0,1.9-3.86.544.544,0,0,0-.07-.257m-23.331-8.6a12.305,12.305,0,0,0,4.309-4.087,13.1,13.1,0,0,1,5,4.98,41.558,41.558,0,0,0-9.305-.893M54.6,27.987a9.035,9.035,0,0,0,1.332-3.268,38.824,38.824,0,0,0,4.915-.746c-1.557,2.538-4.541,3.6-6.247,4.013"
-                            transform="translate(-20.247 0)" fill="#141414" />
-                          <path id="Caminho_781" data-name="Caminho 781"
-                            d="M7.55,23.237c0-.015,0-.03,0-.045a35.013,35.013,0,0,0-5.48,2.95,31.355,31.355,0,0,0,2.647-7.115c.592-2.808-.487-6.344-1.282-8.409a22.554,22.554,0,0,1,2.917,2.8,9.3,9.3,0,0,0,3.525,2.818l.537-.968a7.867,7.867,0,0,1-3.266-2.579A19.512,19.512,0,0,0,2.5,8.679a.539.539,0,0,0-.759.7c.027.056,2.722,5.642,1.926,9.424A34.919,34.919,0,0,1,.076,27.579a.539.539,0,0,0,.787.706A39.058,39.058,0,0,1,7.606,24.34a10.975,10.975,0,0,1-.056-1.1"
-                            transform="translate(0 -3.965)" fill="#141414" />
-                          <path id="Caminho_782" data-name="Caminho 782"
-                            d="M28.786,41.448a5.485,5.485,0,0,1-5.478-5.479.539.539,0,1,1,1.078,0,4.405,4.405,0,0,0,4.4,4.4.539.539,0,0,1,0,1.078"
-                            transform="translate(-10.74 -16.325)" fill="#141414" />
-                        </g>
-                      </g>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="39.195"
-                      height="50" viewBox="0 0 39.195 50">
-                      <defs>
-                        <clipPath id="clip-path">
-                          <path id="Caminho_790" data-name="Caminho 790" d="M0,30.815H39.195v-50H0Z"
-                            transform="translate(0 19.185)" fill="none" />
-                        </clipPath>
-                      </defs>
-                      <g id="Grupo_870" data-name="Grupo 870" transform="translate(0 19.185)">
-                        <g id="Grupo_866" data-name="Grupo 866" transform="translate(0 -19.185)"
-                          clip-path="url(#clip-path)">
-                          <g id="Grupo_865" data-name="Grupo 865" transform="translate(0.522 0.522)">
-                            <path id="Caminho_789" data-name="Caminho 789"
-                              d="M.61,18.123l3.229-1.092M1.355,20.49l6.521-2.108m9.455,9.166.537,4.566m-2.351-5.569.662,5.489M12.489,7.787l3.122,1.827m-2.116-4.8,6.354,4.173M19.533-4.66l2.69,1.446M20.8-6.646l3.586,2.262M30.232.531C30.789,3.5,31.5,7.31,32.059,10.279M8.053,18.829,9.439,23.69M31.253-.055,23.534.959M9.184,11.339c-.821-1.183-2.757-.526-3.63.625a3.264,3.264,0,0,0-3.6-.97A3.675,3.675,0,0,0-.209,15.538L3.635,27.7a4.158,4.158,0,0,0,.149.391L2.8,29.643A5.339,5.339,0,0,0,4.12,36.825a4.818,4.818,0,0,0,6.841-1.486l1.462-2.291,2.236-.469,6.013-.873a4.58,4.58,0,0,0,3.537-5.238,4.3,4.3,0,0,0-4.644-4.045l-.4.057,1.944-3.054L22.3,17.558a4.979,4.979,0,0,0,.407-.784L26.1,11.152l.164-.034,7.193-1.045a5.228,5.228,0,0,0,4.279-5.846A4.927,4.927,0,0,0,32.231-.2L28.108.4l2.327-3.654a5.333,5.333,0,0,0-1.321-7.177,4.817,4.817,0,0,0-6.841,1.48L13.495,4.813c-1.277,2.007-1.637,6.377-.381,8.645l-4.54,7.123-.7-2.2L7.12,15.853S10.5,13.231,9.184,11.339Z"
-                              transform="translate(0.379 11.283)" fill="none" stroke="#141414" stroke-linejoin="round"
-                              stroke-width="1" />
+                  <div class="composition__container-item">
+                    <div class="composition__container-circle">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55"
+                        style="display: none" height="29.303" viewBox="0 0 55 29.303">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <rect id="Retângulo_512" data-name="Retângulo 512" width="55" height="29.303"
+                              fill="#141414" />
+                          </clipPath>
+                        </defs>
+                        <g id="Grupo_869" data-name="Grupo 869" transform="translate(0 0)">
+                          <g id="Grupo_861" data-name="Grupo 861" transform="translate(0 0)"
+                            clip-path="url(#clip-path)">
+                            <path id="Caminho_777" data-name="Caminho 777"
+                              d="M26.252,29.207A9.26,9.26,0,0,1,17,19.956a9.136,9.136,0,0,1,.967-4.1.5.5,0,0,1,.04-.093L25.78,1.742a.561.561,0,0,1,.944,0L34.5,15.761a.521.521,0,0,1,.041.094,9.142,9.142,0,0,1,.966,4.1,9.261,9.261,0,0,1-9.25,9.25m-7.259-13a.5.5,0,0,1-.024.055,8.078,8.078,0,0,0-.888,3.69,8.172,8.172,0,1,0,16.343,0,8.084,8.084,0,0,0-.888-3.69.386.386,0,0,1-.024-.056l-7.26-13.1Z"
+                              transform="translate(-7.834 -0.684)" fill="#141414" />
+                            <path id="Caminho_778" data-name="Caminho 778"
+                              d="M76.1,28.032a.539.539,0,0,1-.473-.28,6,6,0,0,1,.92-7.212.539.539,0,0,1,.72.8,4.9,4.9,0,0,0-.695,5.892.54.54,0,0,1-.472.8"
+                              transform="translate(-34.486 -9.401)" fill="#141414" />
+                            <path id="Caminho_779" data-name="Caminho 779"
+                              d="M88.447,25.67a1.033,1.033,0,1,1,1.034-1.034,1.035,1.035,0,0,1-1.034,1.034m0-1.078a.045.045,0,0,0-.045.045c0,.05.09.05.09,0a.044.044,0,0,0-.045-.045"
+                              transform="translate(-40.279 -10.876)" fill="#141414" />
+                            <path id="Caminho_780" data-name="Caminho 780"
+                              d="M75.176,13.922c-1.845-3.254-6.742-5.913-12.6-7.378-.481-.948-2.7-4.964-6.446-6.5a.541.541,0,0,0-.693.271,11.7,11.7,0,0,1-6.451,5.175c-.642.064-1.279.142-1.907.242-1.145.182-2.182.407-3.136.658l.538.97c.845-.212,1.763-.4,2.768-.562a39.1,39.1,0,0,1,14.731.675.538.538,0,0,0,.191.046c5.56,1.348,10.2,3.8,12,6.816a4.754,4.754,0,0,1-1.59,2.951c-4.2,4.275-13.294,6.512-20.1,6.512a15.786,15.786,0,0,1-3.715-.52,10.731,10.731,0,0,1-.456,1,17.146,17.146,0,0,0,4.171.6c.8,0,1.577-.032,2.349-.078a8.964,8.964,0,0,1-1.86,3.631.539.539,0,0,0,.42.878l.054,0c.274-.028,6.625-.731,8.808-5.662,5.1-1.321,9.044-3.51,11.1-5.6a5.6,5.6,0,0,0,1.9-3.86.544.544,0,0,0-.07-.257m-23.331-8.6a12.305,12.305,0,0,0,4.309-4.087,13.1,13.1,0,0,1,5,4.98,41.558,41.558,0,0,0-9.305-.893M54.6,27.987a9.035,9.035,0,0,0,1.332-3.268,38.824,38.824,0,0,0,4.915-.746c-1.557,2.538-4.541,3.6-6.247,4.013"
+                              transform="translate(-20.247 0)" fill="#141414" />
+                            <path id="Caminho_781" data-name="Caminho 781"
+                              d="M7.55,23.237c0-.015,0-.03,0-.045a35.013,35.013,0,0,0-5.48,2.95,31.355,31.355,0,0,0,2.647-7.115c.592-2.808-.487-6.344-1.282-8.409a22.554,22.554,0,0,1,2.917,2.8,9.3,9.3,0,0,0,3.525,2.818l.537-.968a7.867,7.867,0,0,1-3.266-2.579A19.512,19.512,0,0,0,2.5,8.679a.539.539,0,0,0-.759.7c.027.056,2.722,5.642,1.926,9.424A34.919,34.919,0,0,1,.076,27.579a.539.539,0,0,0,.787.706A39.058,39.058,0,0,1,7.606,24.34a10.975,10.975,0,0,1-.056-1.1"
+                              transform="translate(0 -3.965)" fill="#141414" />
+                            <path id="Caminho_782" data-name="Caminho 782"
+                              d="M28.786,41.448a5.485,5.485,0,0,1-5.478-5.479.539.539,0,1,1,1.078,0,4.405,4.405,0,0,0,4.4,4.4.539.539,0,0,1,0,1.078"
+                              transform="translate(-10.74 -16.325)" fill="#141414" />
                           </g>
                         </g>
-                      </g>
-                    </svg>
-                  </div>
-                  <p class="composition__container-label">Extrato de Gengibre Tailandês</p>
-                </div>
-                <div class="composition__container-item">
-                  <div class="composition__container-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55"
-                      height="29.303" viewBox="0 0 55 29.303">
-                      <defs>
-                        <clipPath id="clip-path">
-                          <rect id="Retângulo_512" data-name="Retângulo 512" width="55" height="29.303"
-                            fill="#141414" />
-                        </clipPath>
-                      </defs>
-                      <g id="Grupo_869" data-name="Grupo 869" transform="translate(0 0)">
-                        <g id="Grupo_861" data-name="Grupo 861" transform="translate(0 0)" clip-path="url(#clip-path)">
-                          <path id="Caminho_777" data-name="Caminho 777"
-                            d="M26.252,29.207A9.26,9.26,0,0,1,17,19.956a9.136,9.136,0,0,1,.967-4.1.5.5,0,0,1,.04-.093L25.78,1.742a.561.561,0,0,1,.944,0L34.5,15.761a.521.521,0,0,1,.041.094,9.142,9.142,0,0,1,.966,4.1,9.261,9.261,0,0,1-9.25,9.25m-7.259-13a.5.5,0,0,1-.024.055,8.078,8.078,0,0,0-.888,3.69,8.172,8.172,0,1,0,16.343,0,8.084,8.084,0,0,0-.888-3.69.386.386,0,0,1-.024-.056l-7.26-13.1Z"
-                            transform="translate(-7.834 -0.684)" fill="#141414" />
-                          <path id="Caminho_778" data-name="Caminho 778"
-                            d="M76.1,28.032a.539.539,0,0,1-.473-.28,6,6,0,0,1,.92-7.212.539.539,0,0,1,.72.8,4.9,4.9,0,0,0-.695,5.892.54.54,0,0,1-.472.8"
-                            transform="translate(-34.486 -9.401)" fill="#141414" />
-                          <path id="Caminho_779" data-name="Caminho 779"
-                            d="M88.447,25.67a1.033,1.033,0,1,1,1.034-1.034,1.035,1.035,0,0,1-1.034,1.034m0-1.078a.045.045,0,0,0-.045.045c0,.05.09.05.09,0a.044.044,0,0,0-.045-.045"
-                            transform="translate(-40.279 -10.876)" fill="#141414" />
-                          <path id="Caminho_780" data-name="Caminho 780"
-                            d="M75.176,13.922c-1.845-3.254-6.742-5.913-12.6-7.378-.481-.948-2.7-4.964-6.446-6.5a.541.541,0,0,0-.693.271,11.7,11.7,0,0,1-6.451,5.175c-.642.064-1.279.142-1.907.242-1.145.182-2.182.407-3.136.658l.538.97c.845-.212,1.763-.4,2.768-.562a39.1,39.1,0,0,1,14.731.675.538.538,0,0,0,.191.046c5.56,1.348,10.2,3.8,12,6.816a4.754,4.754,0,0,1-1.59,2.951c-4.2,4.275-13.294,6.512-20.1,6.512a15.786,15.786,0,0,1-3.715-.52,10.731,10.731,0,0,1-.456,1,17.146,17.146,0,0,0,4.171.6c.8,0,1.577-.032,2.349-.078a8.964,8.964,0,0,1-1.86,3.631.539.539,0,0,0,.42.878l.054,0c.274-.028,6.625-.731,8.808-5.662,5.1-1.321,9.044-3.51,11.1-5.6a5.6,5.6,0,0,0,1.9-3.86.544.544,0,0,0-.07-.257m-23.331-8.6a12.305,12.305,0,0,0,4.309-4.087,13.1,13.1,0,0,1,5,4.98,41.558,41.558,0,0,0-9.305-.893M54.6,27.987a9.035,9.035,0,0,0,1.332-3.268,38.824,38.824,0,0,0,4.915-.746c-1.557,2.538-4.541,3.6-6.247,4.013"
-                            transform="translate(-20.247 0)" fill="#141414" />
-                          <path id="Caminho_781" data-name="Caminho 781"
-                            d="M7.55,23.237c0-.015,0-.03,0-.045a35.013,35.013,0,0,0-5.48,2.95,31.355,31.355,0,0,0,2.647-7.115c.592-2.808-.487-6.344-1.282-8.409a22.554,22.554,0,0,1,2.917,2.8,9.3,9.3,0,0,0,3.525,2.818l.537-.968a7.867,7.867,0,0,1-3.266-2.579A19.512,19.512,0,0,0,2.5,8.679a.539.539,0,0,0-.759.7c.027.056,2.722,5.642,1.926,9.424A34.919,34.919,0,0,1,.076,27.579a.539.539,0,0,0,.787.706A39.058,39.058,0,0,1,7.606,24.34a10.975,10.975,0,0,1-.056-1.1"
-                            transform="translate(0 -3.965)" fill="#141414" />
-                          <path id="Caminho_782" data-name="Caminho 782"
-                            d="M28.786,41.448a5.485,5.485,0,0,1-5.478-5.479.539.539,0,1,1,1.078,0,4.405,4.405,0,0,0,4.4,4.4.539.539,0,0,1,0,1.078"
-                            transform="translate(-10.74 -16.325)" fill="#141414" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="39.195"
+                        height="50" viewBox="0 0 39.195 50">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <path id="Caminho_790" data-name="Caminho 790" d="M0,30.815H39.195v-50H0Z"
+                              transform="translate(0 19.185)" fill="none" />
+                          </clipPath>
+                        </defs>
+                        <g id="Grupo_870" data-name="Grupo 870" transform="translate(0 19.185)">
+                          <g id="Grupo_866" data-name="Grupo 866" transform="translate(0 -19.185)"
+                            clip-path="url(#clip-path)">
+                            <g id="Grupo_865" data-name="Grupo 865" transform="translate(0.522 0.522)">
+                              <path id="Caminho_789" data-name="Caminho 789"
+                                d="M.61,18.123l3.229-1.092M1.355,20.49l6.521-2.108m9.455,9.166.537,4.566m-2.351-5.569.662,5.489M12.489,7.787l3.122,1.827m-2.116-4.8,6.354,4.173M19.533-4.66l2.69,1.446M20.8-6.646l3.586,2.262M30.232.531C30.789,3.5,31.5,7.31,32.059,10.279M8.053,18.829,9.439,23.69M31.253-.055,23.534.959M9.184,11.339c-.821-1.183-2.757-.526-3.63.625a3.264,3.264,0,0,0-3.6-.97A3.675,3.675,0,0,0-.209,15.538L3.635,27.7a4.158,4.158,0,0,0,.149.391L2.8,29.643A5.339,5.339,0,0,0,4.12,36.825a4.818,4.818,0,0,0,6.841-1.486l1.462-2.291,2.236-.469,6.013-.873a4.58,4.58,0,0,0,3.537-5.238,4.3,4.3,0,0,0-4.644-4.045l-.4.057,1.944-3.054L22.3,17.558a4.979,4.979,0,0,0,.407-.784L26.1,11.152l.164-.034,7.193-1.045a5.228,5.228,0,0,0,4.279-5.846A4.927,4.927,0,0,0,32.231-.2L28.108.4l2.327-3.654a5.333,5.333,0,0,0-1.321-7.177,4.817,4.817,0,0,0-6.841,1.48L13.495,4.813c-1.277,2.007-1.637,6.377-.381,8.645l-4.54,7.123-.7-2.2L7.12,15.853S10.5,13.231,9.184,11.339Z"
+                                transform="translate(0.379 11.283)" fill="none" stroke="#141414" stroke-linejoin="round"
+                                stroke-width="1" />
+                            </g>
+                          </g>
                         </g>
-                      </g>
-                    </svg>
+                      </svg>
+                    </div>
+                    <p class="composition__container-label">Extrato de Gengibre Tailandês</p>
                   </div>
-                  <p class="composition__container-label">Óleos de Peixe e de Krill</p>
-                </div>
+                  <div class="composition__container-item">
+                    <div class="composition__container-circle">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55"
+                        height="29.303" viewBox="0 0 55 29.303">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <rect id="Retângulo_512" data-name="Retângulo 512" width="55" height="29.303"
+                              fill="#141414" />
+                          </clipPath>
+                        </defs>
+                        <g id="Grupo_869" data-name="Grupo 869" transform="translate(0 0)">
+                          <g id="Grupo_861" data-name="Grupo 861" transform="translate(0 0)"
+                            clip-path="url(#clip-path)">
+                            <path id="Caminho_777" data-name="Caminho 777"
+                              d="M26.252,29.207A9.26,9.26,0,0,1,17,19.956a9.136,9.136,0,0,1,.967-4.1.5.5,0,0,1,.04-.093L25.78,1.742a.561.561,0,0,1,.944,0L34.5,15.761a.521.521,0,0,1,.041.094,9.142,9.142,0,0,1,.966,4.1,9.261,9.261,0,0,1-9.25,9.25m-7.259-13a.5.5,0,0,1-.024.055,8.078,8.078,0,0,0-.888,3.69,8.172,8.172,0,1,0,16.343,0,8.084,8.084,0,0,0-.888-3.69.386.386,0,0,1-.024-.056l-7.26-13.1Z"
+                              transform="translate(-7.834 -0.684)" fill="#141414" />
+                            <path id="Caminho_778" data-name="Caminho 778"
+                              d="M76.1,28.032a.539.539,0,0,1-.473-.28,6,6,0,0,1,.92-7.212.539.539,0,0,1,.72.8,4.9,4.9,0,0,0-.695,5.892.54.54,0,0,1-.472.8"
+                              transform="translate(-34.486 -9.401)" fill="#141414" />
+                            <path id="Caminho_779" data-name="Caminho 779"
+                              d="M88.447,25.67a1.033,1.033,0,1,1,1.034-1.034,1.035,1.035,0,0,1-1.034,1.034m0-1.078a.045.045,0,0,0-.045.045c0,.05.09.05.09,0a.044.044,0,0,0-.045-.045"
+                              transform="translate(-40.279 -10.876)" fill="#141414" />
+                            <path id="Caminho_780" data-name="Caminho 780"
+                              d="M75.176,13.922c-1.845-3.254-6.742-5.913-12.6-7.378-.481-.948-2.7-4.964-6.446-6.5a.541.541,0,0,0-.693.271,11.7,11.7,0,0,1-6.451,5.175c-.642.064-1.279.142-1.907.242-1.145.182-2.182.407-3.136.658l.538.97c.845-.212,1.763-.4,2.768-.562a39.1,39.1,0,0,1,14.731.675.538.538,0,0,0,.191.046c5.56,1.348,10.2,3.8,12,6.816a4.754,4.754,0,0,1-1.59,2.951c-4.2,4.275-13.294,6.512-20.1,6.512a15.786,15.786,0,0,1-3.715-.52,10.731,10.731,0,0,1-.456,1,17.146,17.146,0,0,0,4.171.6c.8,0,1.577-.032,2.349-.078a8.964,8.964,0,0,1-1.86,3.631.539.539,0,0,0,.42.878l.054,0c.274-.028,6.625-.731,8.808-5.662,5.1-1.321,9.044-3.51,11.1-5.6a5.6,5.6,0,0,0,1.9-3.86.544.544,0,0,0-.07-.257m-23.331-8.6a12.305,12.305,0,0,0,4.309-4.087,13.1,13.1,0,0,1,5,4.98,41.558,41.558,0,0,0-9.305-.893M54.6,27.987a9.035,9.035,0,0,0,1.332-3.268,38.824,38.824,0,0,0,4.915-.746c-1.557,2.538-4.541,3.6-6.247,4.013"
+                              transform="translate(-20.247 0)" fill="#141414" />
+                            <path id="Caminho_781" data-name="Caminho 781"
+                              d="M7.55,23.237c0-.015,0-.03,0-.045a35.013,35.013,0,0,0-5.48,2.95,31.355,31.355,0,0,0,2.647-7.115c.592-2.808-.487-6.344-1.282-8.409a22.554,22.554,0,0,1,2.917,2.8,9.3,9.3,0,0,0,3.525,2.818l.537-.968a7.867,7.867,0,0,1-3.266-2.579A19.512,19.512,0,0,0,2.5,8.679a.539.539,0,0,0-.759.7c.027.056,2.722,5.642,1.926,9.424A34.919,34.919,0,0,1,.076,27.579a.539.539,0,0,0,.787.706A39.058,39.058,0,0,1,7.606,24.34a10.975,10.975,0,0,1-.056-1.1"
+                              transform="translate(0 -3.965)" fill="#141414" />
+                            <path id="Caminho_782" data-name="Caminho 782"
+                              d="M28.786,41.448a5.485,5.485,0,0,1-5.478-5.479.539.539,0,1,1,1.078,0,4.405,4.405,0,0,0,4.4,4.4.539.539,0,0,1,0,1.078"
+                              transform="translate(-10.74 -16.325)" fill="#141414" />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <p class="composition__container-label">Óleos de Peixe e de Krill</p>
+                  </div>
 
+                </div>
               </div>
-            </div>
     </section>
 
     <section class="wrapper__benefits-difference">
+      <div class="wrapper__benefits-difference-wrapper">
 
-      <section class="benefits">
-        <h3 class="benefits__tittle">PROTEÍNAS: O SUPLEMENTO MAIS CONSUMIDO POR ESPORTISTAS.</h3>
-        <ul class="benefits__list">
-          <li class="benefits__item">Ganho de massa magra</li>
-          <li class="benefits__item">Melhora na composição corporal</li>
-          <li class="benefits__item">Saciedade</li>
-        </ul>
-      </section>
+        <section class="benefits">
+          <h3 class="benefits__tittle">PROTEÍNAS: O SUPLEMENTO MAIS CONSUMIDO POR ESPORTISTAS.</h3>
+          <ul class="benefits__list">
+            <li class="benefits__item">Ganho de massa magra</li>
+            <li class="benefits__item">Melhora na composição corporal</li>
+            <li class="benefits__item">Saciedade</li>
+          </ul>
+        </section>
 
-      <section class="difference">
-        <div class="difference__wrapper">
-          <h3 class="difference__subtittle">VOCÊ CONHECE AS DIFERENÇAS ENTRE AS PROTEÍNAS?</h3>
-          <h2 class="difference__tittle">VEM DESCOBRIR AS OPÇÕES DA NOSSA LINHA.</h2>
-        </div>
-      </section>
-
+        <section class="difference">
+          <div class="difference__wrapper">
+            <h3 class="difference__subtittle">VOCÊ CONHECE AS DIFERENÇAS ENTRE AS PROTEÍNAS?</h3>
+            <h2 class="difference__tittle">VEM DESCOBRIR AS OPÇÕES DA NOSSA LINHA.</h2>
+          </div>
+        </section>
+      </div>
     </section>
 
     <section class="whey">
@@ -279,17 +1443,18 @@
     </section>
 
     <section class="price">
-      <img src="assets/price2x.png" alt="" class="price__image">
-      <div class="price__container">
-        <h3 class="price__tittle">ENDURANCE AND RECOVERY</h3>
-        <div class="price__container-prices">
-          <p class="price__firstPrice"><span class="price__firstPrice-strong">De:</span> R$ <span
-              class="price__firstPrice-risk">195,00</span></p>
-          <p class="price__secundPrice">Por: R$ 165,75</p>
-          <a href="https://www.essentialnutrition.com.br/carbpro-4-1-citrus" class="price__anchor">Comprar</a>
+      <div class="price__wrapper">
+        <img src="assets/price2x.png" alt="" class="price__image">
+        <div class="price__container">
+          <h3 class="price__tittle">ENDURANCE AND RECOVERY</h3>
+          <div class="price__container-prices">
+            <p class="price__firstPrice"><span class="price__firstPrice-strong">De:</span> R$ <span
+                class="price__firstPrice-risk">195,00</span></p>
+            <p class="price__secundPrice">Por: R$ 165,75</p>
+            <a href="https://www.essentialnutrition.com.br/carbpro-4-1-citrus" class="price__anchor">Comprar</a>
+          </div>
         </div>
       </div>
-
     </section>
   </main>
 
