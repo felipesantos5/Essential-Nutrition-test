@@ -1,5 +1,5 @@
 .composition {
-  background: var(--bg-03-light) 0% 0% no-repeat padding-box;
+  background: var(--bg-03-light);
   padding: 40px 24px;
 }
 
@@ -42,9 +42,15 @@
   text-align: center;
 }
 
+#Caminho_789,
+#Grupo_869 {
+  stroke: var(--bg-o2-dark);
+}
 .composition__container-circle {
   width: 90px;
   height: 90px;
+
+  color: var(--bg-o2-dark);
 
   border: 1px solid var(--texto-01-light);
   border-radius: 50%;
