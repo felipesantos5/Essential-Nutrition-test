@@ -1,5 +1,5 @@
 .whey {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 
   margin-block: 40px;
@@ -9,11 +9,11 @@
 .whey__container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .whey__image {
-  width: 110px;
+  width: 160px;
 }
 
 .whey__wrapper-text {
@@ -25,7 +25,7 @@
 .whey__tittle {
   color: var(--texto-01-light);
   text-align: left;
-  font: normal normal bold 17px/15px Helvetica;
+  font: normal normal bold 17px Helvetica;
 }
 
 .whey__subTittle {
@@ -65,11 +65,44 @@
   gap: 2px;
 }
 
+.whey__composition-wrapper-desktop {
+  display: none;
+}
+
 @media (min-width: 650px) {
   .whey {
     margin-block: 80px;
   }
   .whey__image {
     width: 300px;
+  }
+  .whey__composition-wrapper-desktop {
+    display: block;
+  }
+  .whey__composition-wrapper-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .whey__tittle {
+    font-size: 36px;
+  }
+  .whey__subTittle {
+    font-size: 28px;
+  }
+  .whey__tittle {
+    font-size: 36px;
+  }
+  .whey__tittle {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 374px) {
+  .whey__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 }

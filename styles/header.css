@@ -1,5 +1,5 @@
 .header {
-  background: var(--bg-o2-dark) 0% 0% no-repeat padding-box;
+  background: black 0% 0% no-repeat padding-box;
   padding-block: 10px 12px;
 }
 
@@ -10,7 +10,7 @@
 .header__wrapper {
   display: flex;
   justify-content: space-between;
-  padding-inline: 20px;
+  margin-inline: 20px;
   position: relative;
 }
 
@@ -38,8 +38,9 @@
 
   height: 100%;
   border: 1px solid var(--bg-o1-light);
-  border: 1px solid #ffffff;
   margin-left: 20px;
+
+  cursor: auto;
 }
 
 .header__link:hover {

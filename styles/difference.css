@@ -14,6 +14,9 @@
 .difference__wrapper {
   padding-inline: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .difference__subtittle {
@@ -30,6 +33,6 @@
 
 @media (min-width: 500px) {
   .difference {
-    width: 100%;
+    height: 600px;
   }
 }

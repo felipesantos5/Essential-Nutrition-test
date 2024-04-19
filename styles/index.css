@@ -19,12 +19,15 @@
   --bg-o2-light: #141414;
   --bg-o1-dark: #cdcdcd;
   --bg-o1-light: #ffffff;
+  --gray-cta: #666666;
 }
 
-[data-theme="dark"] {
-  --white: #000;
-  --black: #fff;
-  --gray: #666666;
+.dark-mode:root {
+  --bg-o1-light: #1d1c1c;
+  --bg-03-light: #131212;
+  --bg-o2-dark: #fff;
+  --gray-cta: #fff;
+  --bg-o2-light: #fff;
 }
 
 body {
